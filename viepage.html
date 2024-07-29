@@ -1,0 +1,338 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="styles.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <section id="viewdtls" class="viewdtls employeemanagment brightness active">
+        <div class="sidesection">
+            <div class="brandname">
+                <h4>Employee</h4>
+                <h6>Managment</h6>
+            </div>
+            <hr>
+
+            <ul class="homelist">
+                <li><span class="material-symbols-outlined">
+                        home
+                    </span><a href="##">Dashboard</a></li>
+                <li><span class="material-symbols-outlined">
+                        bar_chart
+                    </span><a href="##">Employees</a></li>
+                <li><span class="material-symbols-outlined">
+                        person
+                    </span><a href="##">My Profile</a></li>
+                <li><span class="material-symbols-outlined">
+                        lock
+                    </span><a href="##">Logout</a></li>
+
+            </ul>
+            <div class="poweredby">
+                <h5>Powered by</h5>
+                <img src="../dummy-employee-api/Assets/image 1@2x.png">
+
+            </div>
+
+
+        </div>
+        <div class="mainsection">
+            <div class="head">
+                <div class="titlesec">
+                    <h6>Dashboard / Employees</h6>
+                    <h4>Employees</h4>
+                </div>
+                <div class="searchsec">
+                    <div class="searchround">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span><input type="text" placeholder="Search" class="form-control">
+                    </div>
+
+                    <div class="alrmicn">
+                        <span class="material-symbols-outlined">
+                            notifications
+                        </span>
+                    </div>
+                    <img src="../dummy-employee-api/Assets/Elipse 5.png" alt="">
+
+
+                </div>
+
+
+            </div>
+            <div class="profilesection">
+                <div class="profilecard">
+                    <img class="profilebackrnd" src="../dummy-employee-api/Assets/Background.png" alt="">
+                    <div class="name-img">
+                        <img id="avatar" src="" alt=""  style="width: 137px; height: 137px; border-radius: 53%; margin-right: 10px;"">
+                        <h5 id="viewName"></h5>
+                        <p  id="viewEmail"></p>
+                        <div class="prf-details row">
+                            <div class="gender_card col">
+                                <p>Gender</p>
+                                <h6 id="viewGender"></h6>
+
+                            </div>
+                            <div class="gender_card col">
+                                <p>Age</p>
+                                <h6 id="viewAge"></h6>
+
+                            </div>
+                            <div class="gender_card col">
+                                <p>Date of Birth</p>
+                                <h6 id="viewDob"></h6>
+
+                            </div>
+                            <div class="prf-details row">
+                                <div class="gender_card col">
+                                    <p>Mobile Number</p>
+                                    <h6 id="viewPhone"></h6>
+
+                                </div>
+                                <div class="gender_card col">
+                                    <p>Qualification</p>
+                                    <h6 id="viewQualification"></h6>
+
+                                </div>
+
+                            </div>
+                            <div class="prf-details row">
+                                <div class="gender_card col">
+                                    <p>Address</p>
+                                    <h6 id="viewAddress"></h6>
+
+                                </div>
+                                <div class="gender_card col">
+                                    <p>Username</p>
+                                    <h6 id="viewuserName"></h6>
+
+                                </div>
+
+                            </div>
+                            <div class="btn ftr-btn">
+                                <button class="cancel-btn dllt-btn p-3 fw-bold"
+                                     onclick="dltepmploye(employeeid)">Delete</button>
+                                <button class="save-btn  p-3 fw-bold "  onclick="editEmployee(employeeid)">Edit Details
+                                </button>
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+
+
+    </section>
+    <section id="ui-4" class="ui-4 dltpop page">
+        <div class="dlt-popup">
+            <div class="dlt-emp">
+                <h5>Delete Employee</h5>
+                <div class="close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </div>
+            <div class="alretmsg">
+                <h6>Are you sure you want to delete this employee?</h6>
+            </div>
+            <div class="btn-dlt">
+                <button id="cancel-dlt" class="cancel-btn p-3 fw-bold" onclick="closePage('ui-4')">Cancel</button>
+                <button id="delete-employee-btn" class="save-btn p-3 fw-bold">Delete</button>
+            </div>
+
+        </div>
+
+    </section>
+    <section id="ui-3" class="ui-3  page">
+        <form id="editEployeeForm">
+            <div class="container-fluid">
+                <div class="container">
+                    <div class="cards thsec p-3">
+                        <div class="card col p-3  thsec bgwhitee main_card">
+                            <header>
+                                <h2 class="fs-4 p-3">Edit Employee</h2>
+                            </header>
+                            <div class="card-body">
+                                <label for="editavatars" class="upload_image p-4 text-center">
+                                    <input accept="image/*" id="editavatars" name="editavatars" type="file" class="editavatars">
+                                    <img id="editImagePreview" src="" alt="Image Preview">
+                                   
+                                    
+                                </label>
+                                <div class="user_sec row p-3">
+                                    <div class="col">
+                                        <label for="editSalutation" class="form-label fw-bold">Salutation<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <select class="form-select" id="editSalutation" name="editSalutation">
+                                            <option selected>select</option>
+                                            <option>Mr</option>
+                                            <option>Ms</option>
+                                        </select>
+                                    </div>
+                                    <div class="col">
+                                        <label for="editfirstName" class="form-label fw-bold">First Name<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="john" id="editfirstName"
+                                            name="editfirstName">
+                                    </div>
+                                    <div class="col">
+                                        <label for="editlastName" class="form-label fw-bold">Last Name<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="doe" id="editlastName"
+                                            name="editlastName">
+                                    </div>
+                                </div>
+                                <div class="mail_sec row p-3">
+                                    <div class="col">
+                                        <label for="editemailAddress" class="form-label fw-bold">Email Adress<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="email" class="form-control" placeholder="mail@simmple.com"
+                                            id="editemailAddress" name="editemailAddress">
+                                    </div>
+                                    <div class="col">
+                                        <label for="editmobileNumber" class="form-label fw-bold">Mobile Number<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="number" class="form-control" placeholder="enter mobile number"
+                                            id="editmobileNumber" name="editmobileNumber">
+                                    </div>
+                                </div>
+                                <div class="birth_sec row p-3">
+                                    <div class="col">
+                                        <label for="editdob" class="form-label fw-bold">Date Of Birth<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="date" class="form-control" placeholder="select date of birth"
+                                            name="editdob" id="editdob">
+                                    </div>
+                                    <div class="col">
+                                        <label class="form-label fw-bold">Gender<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <div class="gender">
+                                            <div class="form-check">
+                                                <input value="Male" type="radio" class="form-check-input"
+                                                    name="editgenderone" id="editgenderone">
+                                                <label class="form-check-label" for="editcheckradio">Male</label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input value="Female" type="radio" class="form-check-input"
+                                                    name="editgenderone" id="editgendertwo">
+                                                <label class="form-check-label" for="editcheckradio_two">Female</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="adress row p-3">
+                                    <div class="col">
+                                        <label for="editaddress" class="form-label fw-bold">Address<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="enter address"
+                                            name="editaddress" id="editaddress">
+                                    </div>
+
+                                </div>
+                                <div class="country_sec row p-3">
+                                    <div class="col">
+                                        <label for="editcountry" class="form-label fw-bold">Country<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <select class="form-select" name="editcountry" id="editcountry">
+                                            <option selected>select</option>
+                                            <option>India</option>
+                                            <option>USA</option>
+                                            <option>England</option>
+                                            <option>Japan</option>
+                                            <option>Russia</option>
+
+                                        </select>
+
+                                    </div>
+                                    <div class="col">
+                                        <label for="editstate" class="form-label fw-bold">State<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <select class="form-select" name="editstate" id="editstate">
+                                            <option selected>select</option>
+                                            <option>Tamil Nadu</option>
+                                            <option>Kerala</option>
+                                            <option>Karnataka</option>
+                                            <option>Delhi</option>
+                                            <option>Rajasthan</option>
+
+                                        </select>
+
+                                    </div>
+
+                                </div>
+                                <div class="city_sec row p-3">
+                                    <div class="col">
+                                        <label for="editcity" class="form-label fw-bold">City<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="enter your city"
+                                            id="editcity" name="editcity">
+                                    </div>
+                                    <div class="col">
+                                        <label for="editPassword" class="form-label fw-bold">New Password<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="password" class="form-control" placeholder="enter Password"
+                                            id="editPassword" name="editPassword">
+                                    </div>
+
+                                </div>
+                                <div class="qlfction row p-3">
+                                    <div class="col">
+                                        <label for="editQualification" class="form-label fw-bold">Qualification<span
+                                                class="star_icon text-danger">*</span></label>
+                                        <input type="text" class="form-control" placeholder="enter your Qualification"
+                                            id="editQualification" name="editQualification">
+                                    </div>
+
+
+
+                                </div>
+                                <footer class="footer heisec mt-0 p-3">
+                                    <div class="card">
+                                        <div class="card-body text-end">
+                                            <div class="btn">
+                                                <button class="cancel-btn p-3 fw-bold"
+                                                    onclick="closePage('ui-3')">Cancel</button>
+                                                <button id="editsubmit" type="submit" class="save-btn p-3 fw-bold">Save
+                                                    changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </footer>
+                            </div>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </form>               
+    </section>
+
+    <script src="viewpage.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
