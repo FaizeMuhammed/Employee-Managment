@@ -223,10 +223,14 @@ function editEmployee(employeeId) {
                             .then(response => response.json())
                             .then(data => {
                                 console.log('Employee updated:', data);
-                               
+
                                 const editFileInput = document.getElementById('editavatars');
                                 if (editFileInput.files.length > 0) {
                                     uploadEditImage(employeeId);
+                                }
+                                const selectedPage = document.getElementById('ui-3');
+                                if (selectedPage) {
+                                    selectedPage.classList.remove('active');
                                 }
                             })
                             .catch(error => {
@@ -271,11 +275,11 @@ document.getElementById('editavatars').addEventListener('change', function (even
     if (file) {
         const reader = new FileReader();
         reader.onload = function (e) {
-            
+
             const editImagePreview = document.getElementById('editImagePreview');
             editImagePreview.src = e.target.result;
             editImagePreview.style.display = 'block';
-            
+
         };
         reader.readAsDataURL(file);
     }

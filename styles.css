@@ -697,7 +697,7 @@ input{
     object-fit: cover;
     margin-top: 20px;
     
-}
+} 
 .upload_image img{
     padding: 0;
     margin: 0;
@@ -732,6 +732,132 @@ p{
     color: red;
     font-size: 12px;
 }
+#SalutationError{
+    display: none;
+}
+#firstNameError{
+    display: none;
+}
+#lastNameError{
+    display: none;
+}
+#emailAddressError{
+    display: none;
+}
+#MobileNumberError{
+    display: none;
+}
+#dobError{
+    display: none;
+}
+#addressError{
+    display: none;
+}
+#countryError{
+    display: none;
+}
+#stateError{
+    display: none;
+}
+#cityError{
+    display: none;
+}
+#PasswordError{
+    display: none;
+}
+#QualificationError{
+    display: none;
+}
+#genderError{
+    display: none;
+} 
+#sucsessMsg{
+    width: 250px;
+    display: none;
+    align-items: center;
+    
+    background-color: rgb(43, 139, 43);
+    color: #fff;
+    
+    border-radius: 10px;
+    padding: 3px;
+}
+#sucsessdltMsg{
+    width: 250px;
+    display: none;
+    align-items: center;
+    
+    background-color: rgb(159, 29, 6);
+    color: #fff;
+    
+    border-radius: 10px;
+    padding: 3px;
+}
+#sucsesseditMsg{
+    width: 250px;
+    display: none;
+    align-items: center;
+    
+    background-color: rgb(187, 113, 22);
+    color: #fff;
+    
+    border-radius: 10px;
+    padding: 3px;
 
+}
 
+#sucsessmsgdiv{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.msgadd span{
+    color:#ffff
+}
+.mainsection footer{
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    
+}
+
+.pagination button{
+    width: 25px;
+    height: 30px;
+    padding: 5px 0;
+    font-size: 12px;
+    cursor: pointer;
+    pointer-events: auto;
+    outline: none;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #2B3674;
+   
+    background-color: #FFFF;
+
+}
+.pagination button:first-child{
+    width: 30px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-left: 1px solid;
+}
+.pagination button:last-child{
+    width: 30px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-left: 1px solid;
+}
+.pagination button.active,.pagination button:hover{
+    background-color: #4318FF;
+}
+.pagination{
+    gap: 10px;
+}
+.active-page {
+    background-color: #4318FF !important;
+    color: #ffff;
+}
 
